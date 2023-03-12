@@ -1,0 +1,864 @@
+.player-main {
+  width: 335px;
+}
+.player-main audio {
+  display: block;
+  margin-bottom: 20px;
+}
+.player-main .player-cover {
+  width: 335px;
+  height: 335px;
+  background-color: #EEE;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+}
+.player-main .player-txt {
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: 900;
+}
+.player-main .player-txt .player-txt-title {
+  font-size: 42px;
+  line-height: 42px;
+}
+.player-main .player-txt .player-txt-artist {
+  color: #797979;
+  padding-left: 4px;
+  font-size: 20px;
+  line-height: 20px;
+}
+.player-main .progress-bar-main {
+  margin-bottom: 40px;
+}
+.player-main .player-buttons {
+  display: flex;
+  align-items: center;
+}
+.player-main .player-buttons .render-icon {
+  font-size: 24px;
+  margin-right: 24px;
+}
+.player-main .player-buttons .player-buttons-play-pause {
+  font-size: 64px;
+}
+
+.progress-bar-main {
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 24px;
+  background-color: #E5E5E5;
+  transform: skewX(-10deg);
+  position: relative;
+}
+.progress-bar-main .progress-main {
+  height: 24px;
+  line-height: 24px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.progress-bar-main .progress-current {
+  user-select: none;
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 0;
+  right: 8px;
+  color: #FFF;
+  transform: skewX(10deg);
+}
+.progress-bar-main .progress-total {
+  user-select: none;
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 0;
+  right: 8px;
+  transform: skewX(10deg);
+}
+
+.render-icon {
+  user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+}
+.render-icon:active {
+  opacity: 0.8;
+  transform: translate(1px, 1px);
+}
+.render-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.button-main {
+  position: relative;
+  display: inline-block;
+  background-color: #E5E5E5;
+  padding: 0.6em 1em;
+  border-radius: 1px;
+  cursor: pointer;
+  user-select: none;
+  min-width: 4em;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1;
+}
+.button-main:hover {
+  background-color: #E0E0E0;
+}
+.button-main:active {
+  opacity: 0.8;
+  transform: translate(1px, 1px);
+}
+.button-main > * {
+  vertical-align: middle;
+  display: inline-block;
+  line-height: inherit;
+}
+.button-main svg {
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.4em;
+  color: #222;
+}
+.button-main._pure svg {
+  margin-right: 0;
+}
+
+.dialog-form-main {
+  margin-bottom: 1em;
+}
+.dialog-form-field {
+  margin-bottom: 1em;
+}
+.dialog-form-descrition {
+  color: #666;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+.dialog-form-value-input {
+  display: inline-block;
+}
+.dialog-form-value-input input {
+  display: block;
+  font-size: 100%;
+  height: 2em;
+  line-height: 2em;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #EEE;
+}
+.dialog-form-error {
+  display: inline-block;
+  margin-left: 1em;
+  font-size: 12px;
+  color: #cc2c2c;
+}
+
+.rc-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.rc-dialog-wrap {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.rc-dialog-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: bold;
+}
+.rc-dialog-content {
+  position: relative;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 6px 6px;
+  background-clip: padding-box;
+}
+.rc-dialog-close {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font-size: 21px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  text-decoration: none;
+}
+.rc-dialog-close-x:after {
+  content: '×';
+}
+.rc-dialog-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+}
+.rc-dialog-header {
+  padding: 13px 20px 14px 20px;
+  border-radius: 5px 5px 0 0;
+  background: #fff;
+  color: #666;
+  border-bottom: 1px solid #e9e9e9;
+}
+.rc-dialog-body {
+  padding: 20px;
+  font-size: 14px;
+}
+.rc-dialog-footer {
+  font-size: 14px;
+  border-top: 1px solid #e9e9e9;
+  padding: 10px 20px;
+  text-align: left;
+  border-radius: 0 0 5px 5px;
+}
+.rc-dialog-zoom-enter,
+.rc-dialog-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+  animation-play-state: paused;
+}
+.rc-dialog-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+  animation-play-state: paused;
+}
+.rc-dialog-zoom-enter.rc-dialog-zoom-enter-active,
+.rc-dialog-zoom-appear.rc-dialog-zoom-appear-active {
+  animation-name: rcDialogZoomIn;
+  animation-play-state: running;
+}
+.rc-dialog-zoom-leave.rc-dialog-zoom-leave-active {
+  animation-name: rcDialogZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcDialogZoomOut {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+@media (min-width: 768px) {
+  .rc-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+}
+.rc-dialog-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #373737;
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  filter: alpha(opacity=50);
+  z-index: 1050;
+}
+.rc-dialog-mask-hidden {
+  display: none;
+}
+.rc-dialog-fade-enter,
+.rc-dialog-fade-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.rc-dialog-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.rc-dialog-fade-enter.rc-dialog-fade-enter-active,
+.rc-dialog-fade-appear.rc-dialog-fade-appear-active {
+  animation-name: rcDialogFadeIn;
+  animation-play-state: running;
+}
+.rc-dialog-fade-leave.rc-dialog-fade-leave-active {
+  animation-name: rcDialogFadeOut;
+  animation-play-state: running;
+}
+@keyframes rcDialogFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.system-message {
+  position: fixed;
+  z-index: 1000;
+}
+.system-message-main > * {
+  vertical-align: middle;
+  display: inline-block;
+}
+.system-message-icon {
+  margin-right: 6px;
+}
+.system-message-icon.success {
+  color: #48c448;
+}
+.system-message-icon.information {
+  color: #2b7fcf;
+}
+.system-message-icon.warning {
+  color: #d0772e;
+}
+.system-message-icon.error {
+  color: #c72e2e;
+}
+.system-message-notice-content {
+  display: inline-block;
+  padding: 8px 16px 8px 10px;
+  border-radius: 3px 3px;
+  border: 1px solid #999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 0px solid rgba(0, 0, 0, 0);
+  background: #fff;
+}
+.system-message-notice {
+  text-align: center;
+  display: block;
+  width: auto;
+  line-height: 1.5;
+  position: relative;
+  margin-bottom: 16px;
+}
+.system-message-notice-close {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(-12px, -50%);
+  color: #000;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  text-decoration: none;
+}
+.system-message-notice-close-x:after {
+  content: '×';
+}
+.system-message-notice-close:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+}
+.system-message-fade-appear,
+.system-message-fade-enter {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.system-message-fade-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+  animation-play-state: paused;
+}
+.system-message-fade-appear.system-message-fade-appear-active,
+.system-message-fade-enter.system-message-fade-enter-active {
+  animation-name: rcNotificationFadeIn;
+  animation-play-state: running;
+}
+.system-message-fade-leave.system-message-fade-leave-active {
+  animation-name: rcDialogFadeOut;
+  animation-play-state: running;
+}
+@keyframes rcNotificationFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rcDialogFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fnode-select-main .fnode-select-input {
+  font-size: 100%;
+  height: 2em;
+  line-height: 2em;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #EEE;
+}
+.fnode-select-list {
+  background-color: #FFF;
+  font-size: 100%;
+}
+.fnode-select-list .fnode-select-item {
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 2em;
+  border: 1px solid #EEE;
+  border-bottom: none;
+  border-radius: 2px;
+}
+.fnode-select-list .fnode-select-item:hover {
+  background-color: #EEE;
+}
+.fnode-select-list .fnode-select-item:active {
+  background-color: #DDD;
+}
+.fnode-select-list .fnode-select-item._status {
+  color: #777;
+}
+.fnode-select-list .fnode-select-item._create {
+  padding-left: calc(2px + 1em);
+}
+
+.fnode-render-main {
+  padding: 16px;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.fnode-header-main {
+  margin-bottom: 1rem;
+}
+.fnode-header-main > * {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.fnode-header-main ._type {
+  color: #888;
+}
+.fnode-header-main ._buttons {
+  margin-left: 1em;
+}
+.fnode-header-main ._buttons > * {
+  margin-right: 1em;
+}
+
+.text-input {
+  display: block;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+.text-input > * {
+  vertical-align: middle;
+}
+.text-input ._edit-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.text-input ._edit-icon:active {
+  opacity: 0.5;
+}
+.text-input ._text {
+  display: inline-block;
+}
+.text-input ._text > * {
+  font-size: 1em;
+  font: inherit;
+}
+.text-input ._text input {
+  border: 0px solid #DDD;
+  border-bottom: 1px solid #DDD;
+}
+.text-input ._text span {
+  border: 0px solid #DDD;
+  border-bottom: 1px solid transparent;
+}
+
+.title-main {
+  font-family: serif;
+  font-weight: 900;
+  font-size: 150%;
+  margin-right: 1rem;
+}
+
+.fnode-preview-main {
+  display: flex;
+  flex: 1;
+}
+
+.fnode-preview-image {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.fnode-preview-image img {
+  display: block;
+  width: 100%;
+}
+
+.badge-main {
+  display: inline-block;
+  color: #444444;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.fnode-normal-main {
+  flex: 1;
+}
+
+
+
+
+.album-view-main > .album-image {
+  vertical-align: top;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
+}
+.album-view-main > .album-image ._image {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+.album-view-main > .album-image ._image._nodata {
+  background-color: #F2F2F2;
+  text-align: center;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.album-view-main > .album-meta-main {
+  vertical-align: top;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.album-meta-main {
+  margin-bottom: 2em;
+}
+.album-meta-main > ._buttons {
+  margin-bottom: 1em;
+}
+.album-meta-main > ._buttons > * {
+  display: inline-block;
+  margin-right: 1em;
+}
+.album-meta-line > * {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 6px;
+}
+.album-meta-line > ._left {
+  width: 4em;
+  margin-right: 1em;
+  color: #777;
+}
+
+.split-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.album-list-main {
+  max-width: 1000px;
+}
+.album-list-main > * {
+  line-height: 2em;
+}
+.album-list-main > ._header {
+  color: #777;
+}
+.album-list-main > ._item ._nth {
+  color: #777;
+}
+.album-list-main > ._item ._duration {
+  color: #888;
+}
+.album-list-main > ._item:hover {
+  background-color: #EEE;
+}
+
+/* THIS IS AUTO-GENERATED BY SCRIPT, DO NOT EDIT IT */
+.icon-add {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2292px%22%20height%3D%22100px%22%20viewBox%3D%220%200%2092%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eadd.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22add%22%20transform%3D%22translate%28-4.000000%2C%200.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M62%2C100%20L37%2C100%20L37%2C61%20L4%2C61%20L4%2C37%20L37%2C37%20L37%2C0%20L62%2C0%20L62%2C100%20Z%20M62.193%2C37%20L96%2C37%20L96%2C61%20L66.825%2C61%20L62.193%2C37%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-binding {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2286px%22%20viewBox%3D%220%200%20100%2086%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Ebinding.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22binding%22%20transform%3D%22translate%280.000000%2C%20-5.000000%29%22%20stroke%3D%22%23000000%22%20stroke-width%3D%2215%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20id%3D%22bingding%22%20transform%3D%22translate%288.000000%2C%2013.262895%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M21.5172889%2C20.3161814%20C18.5184585%2C8.84502607%2026.389781%2C0%2035.7156974%2C0%20C45.2420952%2C0%2055.6688671%2C6.99417853%2060.0194268%2C19.5977163%20C62.7502127%2C27.5087818%2060.8986303%2C38.7949114%2052.032408%2C49.6923938%22%20id%3D%22%E8%B7%AF%E5%BE%84-2%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M32.883145%2C65.9685272%20C24.1591143%2C73.508658%208.18047701%2C70.1338112%202.54421981%2C61.2717874%20C-3.46139038%2C51.829021%202.29065507%2C43.0075566%208.18047701%2C38.1581402%20C15.616135%2C32.0359514%2034.4556431%2C26.8084217%2047.4149532%2C29.3952496%22%20id%3D%22%E8%B7%AF%E5%BE%84-2%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M72.5879854%2C36.1192929%20C87.9739419%2C42.0356616%2086.2916511%2C56.9828793%2079.3303518%2C64.2394297%20C73.3350492%2C70.4890124%2061.2663813%2C71.184334%2048.1932339%2C62.7378626%20C43.3781483%2C59.6268687%2033.4790495%2C51.9560276%2029.8977052%2C41.2303678%22%20id%3D%22%E8%B7%AF%E5%BE%84-2%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-download {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2288px%22%20height%3D%2293px%22%20viewBox%3D%220%200%2088%2093%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Edownload.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22download%22%20transform%3D%22translate%28-6.000000%2C%200.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20points%3D%226%2066%2015%2066%2015%2081%2045%2081%2010.625%2044.8023256%2019.625%2034.4418605%2041%2054.0116279%2046%20-1.21820033e-14%2054%20-5.00718704e-15%2059%2054.0116279%2080.375%2034.4418605%2089.375%2044.8023256%2054%2081%2085%2081%2085%2066%2094%2066%2094%2093%206%2093%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-edit {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2291px%22%20height%3D%22100px%22%20viewBox%3D%220%200%2091%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eedit.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22edit%22%20transform%3D%22translate%28-4.000000%2C%200.000000%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cg%20transform%3D%22translate%286.000000%2C%200.000000%29%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M13.0262052%2C72.3969387%20C17.4308926%2C76.4465425%2021.4604705%2C81.0658197%2025.1149387%2C86.2547702%20L25.5942549%2C86.2423484%20C18.4283903%2C86.4807994%2011.4676036%2C86.0469154%204.71189484%2C84.9406962%20C1.15665091%2C86.3231493%200.951643414%2C86.4338012%202.98888855%2C82.7417173%20C2.98786937%2C81.7310219%202.9872578%2C80.7492647%202.98705381%2C79.7964456%20L2.98705354%2C78.3889206%20C2.98830623%2C72.7049974%203.00498641%2C68.11638%203.03709409%2C64.6230683%20C6.31655955%2C66.6985656%209.64653991%2C69.289725%2013.0262052%2C72.3969387%20Z%20M55.4431959%2C8.03460459%20C63.2601228%2C14.7299632%2063.377915%2C32.0231402%2061.8593613%2C47.7739608%20C53.4266545%2C56.748353%2043.2141808%2C67.5855261%2031.2218819%2C80.2846356%20C27.2246287%2C76.2445188%2022.8929004%2C72.2832917%2018.2267108%2C68.4014962%20C14.4953947%2C65.2974204%2010.7609293%2C62.4194326%207.02331467%2C59.7675328%20C30.1379521%2C34.96054%2046.1854508%2C17.8144003%2055.1665934%2C8.32896941%20Z%20M63.1791887%2C3.5149661e-13%20C76.6604189%2C10.406365%2076.6604189%2C10.406365%2085.7307566%2C22.2011936%20C84.1171817%2C23.9543668%2082.1831413%2C26.0427899%2079.9286354%2C28.466463%20L57.3225927%2C6.05627631%20C60.3430932%2C2.87936067%2062.2952918%2C0.860601901%2063.1791887%2C3.5149661e-13%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C87.8993008%20C6.20324615%2C102.824435%209.68760128%2C91.6601866%2026.2806305%2C91.9589402%20C42.8856585%2C92.2579098%2027.7133523%2C101.012325%2042.6739025%2C96.9059898%20C76.7010994%2C87.5662887%2058.0068279%2C92.5206427%2088.179149%2C90.0403749%22%20id%3D%22%E8%B7%AF%E5%BE%84%22%20stroke%3D%22%23000000%22%20stroke-width%3D%224%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-error {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eerror.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-02%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22error%22%20transform%3D%22translate%280.000000%2C%20-0.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M80.048909%2C42.9154518%20L20.3096956%2C42.9154518%20L20.3096956%2C57.89639%20L80.048909%2C57.89639%20L80.048909%2C42.9154518%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-from {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2295px%22%20height%3D%22100px%22%20viewBox%3D%220%200%2095%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Efrom.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22from%22%20transform%3D%22translate%28-1.000000%2C%200.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M1%2C0%20C9.65180103%2C0.876232202%2016.1591386%2C2.93902884%2020.5220126%2C6.18838992%20C24.8848866%2C9.437751%2027.0663236%2C14.3117926%2027.0663236%2C20.8105148%20C27.0663236%2C21.9788244%2026.9369163%2C23.3296824%2026.6781018%2C24.8630887%20C26.4192872%2C26.3964951%2026.1234991%2C27.9664111%2025.7907376%2C29.5728368%20C25.457976%2C31.1792625%2025.1437012%2C32.7309237%2024.8479131%2C34.2278204%20C24.552125%2C35.7247171%2024.404231%2C37.0208105%2024.404231%2C38.1161008%20C24.404231%2C39.2844104%2024.7000191%2C40.45272%2025.2915952%2C41.6210296%20C25.8831713%2C42.7893392%2026.7150753%2C43.8663746%2027.787307%2C44.8521358%20C28.8595388%2C45.837897%2030.1536116%2C46.6776196%2031.6695254%2C47.3713034%20C33.0476289%2C48.0019251%2034.5937939%2C48.4364204%2036.3080202%2C48.6747893%20L36.8273299%2C48.7404162%20L36.8273299%2C51.1500548%20C34.9047075%2C51.3691128%2033.1854393%2C51.8254838%2031.6695254%2C52.5191676%20C30.1536116%2C53.2128514%2028.8595388%2C54.0525739%2027.787307%2C55.0383352%20C26.7150753%2C56.0240964%2025.8831713%2C57.1011318%2025.2915952%2C58.2694414%20C24.7000191%2C59.437751%2024.404231%2C60.6060606%2024.404231%2C61.7743702%20C24.404231%2C62.7966411%2024.5336383%2C64.0562249%2024.7924528%2C65.5531216%20C25.0512674%2C67.0500183%2025.3470555%2C68.5834246%2025.679817%2C70.1533406%20C26.0125786%2C71.7232567%2026.3083667%2C73.2931727%2026.5671812%2C74.8630887%20C26.8259958%2C76.4330047%2026.9554031%2C77.8021176%2026.9554031%2C78.9704272%20C26.9554031%2C82.694414%2026.4008005%2C85.8159912%2025.2915952%2C88.3351588%20C24.1823899%2C90.8543264%2022.5370688%2C92.8988682%2020.3556318%2C94.4687842%20C18.1741948%2C96.0387003%2015.4751286%2C97.2435195%2012.2584334%2C98.0832421%20C9.04173814%2C98.9229646%205.28892701%2C99.5618839%201%2C100%20L1%2C98.1380066%20C5.21497999%2C97.188755%208.28378121%2C95.6736035%2010.2064037%2C93.592552%20C12.1290261%2C91.5115005%2013.0903373%2C88.6089814%2013.0903373%2C84.8849945%20C13.0903373%2C83.8627236%2012.9794168%2C82.6213947%2012.7575758%2C81.1610077%20C12.5357347%2C79.7006207%2012.2769201%2C78.203724%2011.9811321%2C76.6703176%20C11.685344%2C75.1369113%2011.4265294%2C73.6217598%2011.2046884%2C72.1248631%20C10.9828473%2C70.6279664%2010.8719268%2C69.3683826%2010.8719268%2C68.3461117%20C10.8719268%2C64.5491055%2012.2584334%2C60.9894122%2015.0314465%2C57.6670318%20C17.8044597%2C54.3446513%2021.7421384%2C51.7707192%2026.8444826%2C49.9452355%20C21.7421384%2C48.1197517%2017.8044597%2C45.5458196%2015.0314465%2C42.2234392%20C12.2584334%2C38.9010588%2010.8719268%2C35.3413655%2010.8719268%2C31.5443593%20C10.8719268%2C30.5220884%2010.9828473%2C29.2625046%2011.2046884%2C27.7656079%20C11.4265294%2C26.2687112%2011.685344%2C24.7535597%2011.9811321%2C23.2201533%20C12.2769201%2C21.686747%2012.5357347%2C20.1898503%2012.7575758%2C18.7294633%20C12.9794168%2C17.2690763%2013.0903373%2C16.0277474%2013.0903373%2C15.0054765%20C13.0903373%2C11.4275283%2012.1290261%2C8.57977364%2010.2064037%2C6.46221249%20C8.35498945%2C4.42307952%205.44072634%2C2.92563195%201.46361432%2C1.96986975%20L1%2C1.86199343%20L1%2C0%20Z%20M70.2698685%2C21.796276%20C81.6513609%2C21.796276%2091.431359%2C28.5670698%2095.7043031%2C38.2520932%20C93.6092413%2C43.0031007%2090.1890064%2C47.0522929%2085.9048049%2C49.9455238%20C88.7917533%2C51.8945773%2091.2863865%2C54.3691135%2093.2477144%2C57.2293345%20C88.2526955%2C63.0989253%2080.9453836%2C67.1924171%2071.325%2C69.5098576%20C83.0353266%2C68.5663863%2091.0280302%2C65.6527427%2095.3031111%2C60.7689267%20C95.3192408%2C60.8023305%2095.3355766%2C60.8362567%2095.3518437%2C60.8702213%20C90.9101275%2C70.1452777%2081.3487277%2C76.5607886%2070.2698685%2C76.5607886%20C59.1910093%2C76.5607886%2049.6296095%2C70.1452777%2045.1878933%2C60.8712902%20C47.3043753%2C56.4511573%2050.5832977%2C52.6811195%2054.6349321%2C49.9449472%20C50.3510304%2C47.0524954%2046.9309744%2C43.0036675%2044.8354339%2C38.2539308%20C49.1077066%2C28.5675346%2058.8879854%2C21.796276%2070.2698685%2C21.796276%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-information {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Einformation.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-02%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22infomation%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M55.6226854%2C34%20L53.5933725%2C34%20L53.5933725%2C34%20C52.8433725%2C34.9120198%2052.2984721%2C35.8985471%2051.0800996%2C36.8389872%20C49.861727%2C37.7794273%2048.8125%2C38.2940933%2047.2375%2C39.016109%20C45.6625%2C39.7381247%2044.05%2C40.3841388%2042.4%2C40.9541512%20C40.75%2C41.5241636%2039.2875%2C41.9611731%2038.0125%2C42.2651797%20L38.0125%2C45.0012392%20C40.7125%2C45.6092524%2042.8288582%2C45.8179433%2044.0911439%2C46.5848689%20C45.2967028%2C47.2316848%2046.2914965%2C49.3333333%2046.2914965%2C51.157373%20L46.2914965%2C72.0198265%20C46.1011899%2C74.2178479%2043.591558%2C75.2599569%2041.275%2C75.8959108%20L37%2C77.0359356%20L37%2C80%20C38.2%2C79.8479967%2040%2C79.7339942%2042.4%2C79.6579926%20C44.8%2C79.5819909%2047.5%2C79.5439901%2050.5%2C79.5439901%20C53.5%2C79.5439901%2056.2%2C79.5819909%2058.6%2C79.6579926%20C61%2C79.7339942%2062.8%2C79.8479967%2064%2C80%20L64%2C77.0359356%20L60.175%2C75.7819083%20C59.0782119%2C75.3747504%2057.9439608%2C74.9390097%2057.1187523%2C74.3701142%20C56.2935438%2C73.8012187%2055.6226854%2C73.1598513%2055.6226854%2C72.0198265%20L55.6226854%2C34%20Z%20M50.456%2C20%20C48.9306667%2C20%2047.64%2C20.5674603%2046.584%2C21.702381%20C45.528%2C22.8373016%2045%2C24.1613757%2045%2C25.6746032%20C45%2C27.1878307%2045.5133333%2C28.4537037%2046.54%2C29.4722222%20C47.5666667%2C30.4907407%2048.8426667%2C31%2050.368%2C31%20C51.952%2C31%2053.2866667%2C30.4470899%2054.372%2C29.3412698%20C55.4573333%2C28.2354497%2056%2C27.0132275%2056%2C25.6746032%20C56%2C24.1613757%2055.4573333%2C22.8373016%2054.372%2C21.702381%20C53.2866667%2C20.5674603%2051.9813333%2C20%2050.456%2C20%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-loop-single {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eloop-single.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22%E6%8E%A7%E4%BB%B6%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22loop-single%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M47%2C0%20C74.6142375%2C0%2097%2C22.3857625%2097%2C50%20C97%2C77.6142375%2074.6142375%2C100%2047%2C100%20C28.0352412%2C100%2011.536542%2C89.4415437%203.0615555%2C73.8822841%20L11.8371779%2C69.0836577%20C18.6135652%2C81.5432044%2031.8191874%2C90%2047%2C90%20C69.09139%2C90%2087%2C72.09139%2087%2C50%20C87%2C27.90861%2069.09139%2C10%2047%2C10%20C37.3879248%2C10%2028.5677185%2C13.3903935%2021.6700122%2C19.0405494%20L10.7714444%2C15.5398564%20C19.879854%2C5.96700551%2032.7430926%2C0%2047%2C0%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22%E7%9F%A9%E5%BD%A2%22%20points%3D%2213.5132328%202.09096681%2029.0034789%2022.3084569%207%2026.2931699%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%221%22%20fill-rule%3D%22nonzero%22%20points%3D%2264.46875%2075%2064.46875%2066.875%2054.15625%2066.875%2054.15625%2028.34375%2045.25%2028.34375%2035.59375%2030.65625%2035.59375%2038.96875%2045.1875%2036.59375%2045.1875%2066.875%2034.875%2066.875%2034.875%2075%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-loop {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eloop.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-players%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22loop%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M47%2C0%20C74.6142375%2C0%2097%2C22.3857625%2097%2C50%20C97%2C77.6142375%2074.6142375%2C100%2047%2C100%20C28.0352412%2C100%2011.536542%2C89.4415437%203.0615555%2C73.8822841%20L11.8371779%2C69.0836577%20C18.6135652%2C81.5432044%2031.8191874%2C90%2047%2C90%20C69.09139%2C90%2087%2C72.09139%2087%2C50%20C87%2C27.90861%2069.09139%2C10%2047%2C10%20C37.3879248%2C10%2028.5677185%2C13.3903935%2021.6700122%2C19.0405494%20L10.7714444%2C15.5398564%20C19.879854%2C5.96700551%2032.7430926%2C0%2047%2C0%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22%E7%9F%A9%E5%BD%A2%22%20points%3D%2213.5132328%202.09096681%2029.0034789%2022.3084569%207%2026.2931699%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-mail {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2282px%22%20viewBox%3D%220%200%20100%2082%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Email.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22mail%22%20transform%3D%22translate%280.000000%2C%20-10.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M51.5%2C51%20L89%2C1%20L91%2C1%20C89.6666667%2C17.6666667%2089%2C34.3333333%2089%2C51%20C89%2C67.6666667%2089.6666667%2C84.3333333%2091%2C101%20L89%2C101%20L51.5%2C51%20Z%20M49%2C51%20L82.6666667%2C101%20L11%2C101%20C9.66666667%2C84.3333333%209%2C67.6666667%209%2C51%20C9%2C34.3333333%209.66666667%2C17.6666667%2011%2C1%20L82.6666667%2C1%20L49%2C51%20Z%22%20transform%3D%22translate%2850.000000%2C%2051.000000%29%20rotate%28-90.000000%29%20translate%28-50.000000%2C%20-51.000000%29%20%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-more {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Emore.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-03%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22more%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22%E6%A4%AD%E5%9C%86%E5%BD%A2%22%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%228%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22%E6%A4%AD%E5%9C%86%E5%BD%A2%22%20cx%3D%2284%22%20cy%3D%2250%22%20r%3D%228%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ccircle%20id%3D%22%E6%A4%AD%E5%9C%86%E5%BD%A2%22%20cx%3D%2216%22%20cy%3D%2250%22%20r%3D%228%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-pause {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Epause.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-03%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22pause%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M43%2C26.0021538%20L31%2C26.0021538%20L31%2C74%20L43%2C74%20L43%2C26.0021538%20Z%20M69%2C26%20L57%2C26%20L57%2C73.9978462%20L69%2C73.9978462%20L69%2C26%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22play%22%20transform%3D%22translate%280.000000%2C%20-100.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M36%2C25.0021538%20L36%2C75%20L73%2C50%20L36%2C25.0021538%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-play {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eplay.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-03%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22play%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M36%2C25.0021538%20L36%2C75%20L73%2C50%20L36%2C25.0021538%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-random {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Erandom.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-players%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22random%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M8%2C78.6775887%20C18.8981389%2C74.6620827%2026.2438083%2C70.8659001%2030.0370082%2C67.2890408%20C44.9320965%2C53.2434764%2046.1898351%2C44.3848382%2058.0553645%2C31.1633926%20C63.3498092%2C25.2639328%2072.6646878%2C22.5620063%2086%2C23.057613%22%20id%3D%22%E7%9B%B4%E7%BA%BF%22%20stroke%3D%22%23000000%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22square%22%20transform%3D%22translate%2847.000000%2C%2050.838794%29%20scale%281%2C%20-1%29%20translate%28-47.000000%2C%20-50.838794%29%20%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22%E7%9F%A9%E5%BD%A2%22%20fill%3D%22%23000000%22%20points%3D%2281%2067%2098%2077.994717%2081%2089%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M8%2C78.6723057%20C18.8981389%2C74.6567997%2026.2438083%2C70.860617%2030.0370082%2C67.2837578%20C44.9320965%2C53.2381933%2046.1898351%2C44.3795552%2058.0553645%2C31.1581095%20C63.3498092%2C25.2586497%2072.6646878%2C22.5567232%2086%2C23.05233%22%20id%3D%22%E7%9B%B4%E7%BA%BF%22%20stroke%3D%22%23000000%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22square%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22%E7%9F%A9%E5%BD%A2%22%20fill%3D%22%23000000%22%20points%3D%2281%2012%2098%2022.994717%2081%2034%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-right {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2290px%22%20viewBox%3D%220%200%20100%2090%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eright.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22right%22%20transform%3D%22translate%280.000000%2C%20-5.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M58%2C50%20L31.75%2C5%20L75%2C5%20L100%2C50%20L75%2C95%20L31.75%2C95%20L58%2C50%20Z%20M43%2C50%20L18%2C95%20L0%2C95%20L25%2C50%20L0%2C5%20L18%2C5%20L43%2C50%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-structure {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2286px%22%20viewBox%3D%220%200%20100%2086%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Estructure.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22structure%22%20transform%3D%22translate%280.000000%2C%20-7.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M57.298461%2C42.9399475%20C62.3738398%2C48.5350568%2063.9230904%2C55.6985408%2061.9462127%2C64.4303997%20L61.9392457%2C64.4312919%20C59.0584546%2C73.4579393%2050.5579563%2C80%2040.5198372%2C80%20C28.1119626%2C80%2018.0533928%2C70.0044967%2018.0533928%2C57.6744186%20C18.0533928%2C46.4120288%2026.4453968%2C37.0974071%2037.3544147%2C35.5687081%20L37.3553928%2C35.564%20L37.7820893%2C35.5310183%20C45.8068614%2C34.9735697%2052.3123187%2C37.4432127%2057.298461%2C42.9399475%20Z%20M58.7738232%2C20%20C71.1816978%2C20%2081.2402676%2C29.9955033%2081.2402676%2C42.3255814%20C81.2402676%2C51.4462241%2075.7365587%2C59.2894664%2067.8494082%2C62.7546048%20C69.7077654%2C52.7206788%2068.0150263%2C44.572713%2062.771222%2C38.3101457%20C57.5326347%2C32.053809%2049.7079832%2C29.6806553%2039.2972676%2C31.1906844%20C43.176303%2C24.5028043%2050.4459021%2C20%2058.7738232%2C20%20Z%22%20id%3D%22nuclear%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M93.4703909%2C18.8061884%20C90.4041236%2C20.4317298%2086.5967523%2C19.2711422%2084.9663891%2C16.2139434%20C83.3360259%2C13.1567447%2084.5000561%2C9.36063367%2087.5663234%2C7.73509224%20C90.6325906%2C6.10955082%2094.4399619%2C7.27013841%2096.0703251%2C10.3273372%20C97.7006883%2C13.384536%2096.5366581%2C17.180647%2093.4703909%2C18.8061884%20Z%20M74.7209869%2C69.8620879%20C87.2959823%2C60.7815943%2093.6270805%2C51.6379749%2093.7142815%2C42.4312296%20C93.8014825%2C33.2244844%2091.9551729%2C26.4806169%2088.1753526%2C22.1996272%20C90.1945038%2C23.0436464%2091.968977%2C23.1988996%2093.4987724%2C22.6653869%20C95.0285678%2C22.1318741%2096.2363903%2C20.9654292%2097.1222402%2C19.1660521%20C100.14534%2C26.4394992%20100.786605%2C34.2454617%2099.0460338%2C42.5839397%20C97.4988596%2C49.9959202%2090.9203546%2C58.0038418%2079.3105189%2C66.6077046%20L78.2073566%2C67.4160626%20C77.4620882%2C67.956132%2076.6971662%2C68.4985292%2075.9125906%2C69.0432543%20L74.7209869%2C69.8620879%20L74.7209869%2C69.8620879%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6.52960914%2C81.0558995%20C9.59587639%2C79.430358%2013.4032477%2C80.5909456%2015.0336109%2C83.6481444%20C16.6639741%2C86.7053432%2015.4999439%2C90.5014542%2012.4336766%2C92.1269956%20C9.36740937%2C93.7525371%205.56003811%2C92.5919495%203.92967489%2C89.5347507%20C2.29931167%2C86.4775519%203.46334188%2C82.6814409%206.52960914%2C81.0558995%20Z%20M25.2790131%2C30%20C12.7040177%2C39.0804936%206.37291946%2C48.224113%206.28571848%2C57.4308582%20C6.1985175%2C66.6376035%208.04482714%2C73.381471%2011.8246474%2C77.6624607%20C9.80549623%2C76.8184415%208.03102297%2C76.6631882%206.50122761%2C77.196701%20C4.97143225%2C77.7302137%203.76360966%2C78.8966586%202.87775983%2C80.6960357%20C-0.145340264%2C73.4225887%20-0.78660482%2C65.6166261%200.953966164%2C57.2781481%20C2.01764843%2C52.1824116%205.45942064%2C46.8049997%2011.2792828%2C41.1459125%20L12.0876406%2C40.3724729%20C15.6543986%2C37.0133355%2020.0515228%2C33.5558445%2025.2790131%2C30%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-success {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Esuccess.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-02%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22success%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M79.3408356%2C33.4617747%20L42.7%2C64.2276047%20L24.0041898%2C43.965797%20L16.7017282%2C51.1758296%20L41.6680188%2C78.2081208%20L85.4309457%2C40.86347%20L79.3408356%2C33.4617747%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22infomation%22%20transform%3D%22translate%280.000000%2C%20-100.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M55.6226854%2C34%20L53.5933725%2C34%20L53.5933725%2C34%20C52.8433725%2C34.9120198%2052.2984721%2C35.8985471%2051.0800996%2C36.8389872%20C49.861727%2C37.7794273%2048.8125%2C38.2940933%2047.2375%2C39.016109%20C45.6625%2C39.7381247%2044.05%2C40.3841388%2042.4%2C40.9541512%20C40.75%2C41.5241636%2039.2875%2C41.9611731%2038.0125%2C42.2651797%20L38.0125%2C45.0012392%20C40.7125%2C45.6092524%2042.8288582%2C45.8179433%2044.0911439%2C46.5848689%20C45.2967028%2C47.2316848%2046.2914965%2C49.3333333%2046.2914965%2C51.157373%20L46.2914965%2C72.0198265%20C46.1011899%2C74.2178479%2043.591558%2C75.2599569%2041.275%2C75.8959108%20L37%2C77.0359356%20L37%2C80%20C38.2%2C79.8479967%2040%2C79.7339942%2042.4%2C79.6579926%20C44.8%2C79.5819909%2047.5%2C79.5439901%2050.5%2C79.5439901%20C53.5%2C79.5439901%2056.2%2C79.5819909%2058.6%2C79.6579926%20C61%2C79.7339942%2062.8%2C79.8479967%2064%2C80%20L64%2C77.0359356%20L60.175%2C75.7819083%20C59.0782119%2C75.3747504%2057.9439608%2C74.9390097%2057.1187523%2C74.3701142%20C56.2935438%2C73.8012187%2055.6226854%2C73.1598513%2055.6226854%2C72.0198265%20L55.6226854%2C34%20Z%20M50.456%2C20%20C48.9306667%2C20%2047.64%2C20.5674603%2046.584%2C21.702381%20C45.528%2C22.8373016%2045%2C24.1613757%2045%2C25.6746032%20C45%2C27.1878307%2045.5133333%2C28.4537037%2046.54%2C29.4722222%20C47.5666667%2C30.4907407%2048.8426667%2C31%2050.368%2C31%20C51.952%2C31%2053.2866667%2C30.4470899%2054.372%2C29.3412698%20C55.4573333%2C28.2354497%2056%2C27.0132275%2056%2C25.6746032%20C56%2C24.1613757%2055.4573333%2C22.8373016%2054.372%2C21.702381%20C53.2866667%2C20.5674603%2051.9813333%2C20%2050.456%2C20%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-successor {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2290px%22%20viewBox%3D%220%200%20100%2090%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Esuccessor.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22successor%22%20transform%3D%22translate%280.000000%2C%20-5.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M58%2C50%20L31.75%2C5%20L75%2C5%20L100%2C50%20L75%2C95%20L31.75%2C95%20L58%2C50%20Z%20M43%2C50%20L18%2C95%20L0%2C95%20L25%2C50%20L0%2C5%20L18%2C5%20L43%2C50%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-tag {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2287px%22%20height%3D%22100px%22%20viewBox%3D%220%200%2087%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Etag.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22tag%22%20transform%3D%22translate%28-5.000000%2C%200.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M85.0408784%2C39.6114795%20L68.7954688%2C100%20L50.0728645%2C95.0029766%20L85.0408784%2C39.6114795%20Z%20M71.2438132%2C0%20L72.3427632%2C0.00555639242%20L73.4082427%2C0.0222255697%20C73.5830334%2C0.0259298313%2073.7564295%2C0.0300971256%2073.9284309%2C0.0347274526%20L74.9437045%2C0.0680658071%20C75.1101276%2C0.0745482649%2075.275156%2C0.0814937554%2075.4387899%2C0.0889022787%20L76.4038576%2C0.13890981%20L77.3354548%2C0.200030127%20C77.4879318%2C0.211142912%2077.6390142%2C0.222718729%2077.788702%2C0.23475758%20L78.6700934%2C0.312547073%20L79.5180142%2C0.401449352%20C80.2106688%2C0.480164911%2080.8684582%2C0.570456288%2081.4913825%2C0.672323482%20L82.2221564%2C0.800120508%20C85.3163235%2C1.37798532%2087.4677366%2C2.26886024%2088.6763957%2C3.47274526%20C90.3961106%2C5.18566752%2091.4796419%2C8.79960197%2091.9269896%2C14.3145486%20L91.9997887%2C22.4533972%20C88.241643%2C26.7163362%2084.9319645%2C27.1862332%2081.348767%2C25.2380531%20C80.7008717%2C24.8857932%2080.1398694%2C24.5109766%2079.6634366%2C24.1031342%20C79.7652066%2C24.0124089%2079.8645959%2C23.9181638%2079.9621571%2C23.8209879%20C83.1970809%2C20.5988416%2083.1970809%2C15.3747102%2079.9621571%2C12.1525638%20C76.7272333%2C8.93041751%2071.4823855%2C8.93041751%2068.2474617%2C12.1525638%20C65.0125379%2C15.3747102%2065.0125379%2C20.5988416%2068.2474617%2C23.8209879%20C69.8365556%2C25.4038051%2071.9106595%2C26.2090939%2073.9932697%2C26.2368543%20L74.2907918%2C26.2355308%20L74.2907918%2C26.2355308%20C75.146376%2C27.8084451%2076.4033737%2C29.0748623%2078.0633799%2C29.9976739%20C81.1019433%2C31.6868372%2084.5278772%2C31.8920477%2088.0391734%2C30.556775%20L88.4027031%2C30.4131458%20L88.4027031%2C30.4131458%20L31.7446839%2C86.7876398%20L5%2C60.1479479%20L65.2470049%2C0.13890981%20L66.5133077%2C0.0889022787%20L67.7461399%2C0.0500075317%20L68.9455016%2C0.0222255697%20L70.1113927%2C0.00555639242%20L71.2438132%2C0%20Z%20M74.2817656%2C12.1812515%20L78.7256775%2C13.7087513%20C77.0375027%2C18.8925669%2077.1959546%2C21.8611742%2079.4992573%2C23.9582255%20L79.6634366%2C24.1031342%20L79.6634366%2C24.1031342%20C78.1379785%2C25.4820319%2076.2204756%2C26.1926344%2074.2907918%2C26.2355308%20C72.445583%2C22.8499608%2072.4531027%2C18.0439111%2074.2817656%2C12.1812515%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-to {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%2297px%22%20height%3D%22100px%22%20viewBox%3D%220%200%2097%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eto.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22to%22%20transform%3D%22translate%28-1.000000%2C%200.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M36.8273299%2C0.0547345375%20L36.8273299%2C1.91570881%20L36.3637156%2C2.02352609%20C32.3866036%2C2.97876515%2029.4723405%2C4.47539311%2027.6209262%2C6.51340996%20C25.6983038%2C8.62981208%2024.7369926%2C11.476008%2024.7369926%2C15.0519978%20C24.7369926%2C16.0737092%2024.8479131%2C17.3143587%2025.0697541%2C18.7739464%20C25.2915952%2C20.233534%2025.5504098%2C21.7296114%2025.8461978%2C23.2621784%20C26.1419859%2C24.7947455%2026.4008005%2C26.3090677%2026.6226415%2C27.805145%20C26.8444826%2C29.3012224%2026.9554031%2C30.5601168%2026.9554031%2C31.5818281%20C26.9554031%2C35.3767561%2025.5688965%2C38.934501%2022.7958834%2C42.2550629%20C20.0228702%2C45.5756249%2016.0851915%2C48.1481481%2010.9828473%2C49.9726327%20C16.0851915%2C51.7971173%2020.0228702%2C54.3696406%2022.7958834%2C57.6902025%20C25.5688965%2C61.0107645%2026.9554031%2C64.5685094%2026.9554031%2C68.3634373%20C26.9554031%2C69.3851487%2026.8444826%2C70.6440431%2026.6226415%2C72.1401204%20C26.4008005%2C73.6361978%2026.1419859%2C75.15052%2025.8461978%2C76.683087%20C25.5504098%2C78.2156541%2025.2915952%2C79.7117314%2025.0697541%2C81.1713191%20C24.8479131%2C82.6309068%2024.7369926%2C83.8715563%2024.7369926%2C84.8932677%20C24.7369926%2C88.6152162%2025.6983038%2C91.5161467%2027.6209262%2C93.5960591%20C29.5435487%2C95.6759715%2032.6123499%2C97.1902937%2036.8273299%2C98.1390257%20L36.8273299%2C98.1390257%20L36.8273299%2C100%20C32.5384029%2C99.5621237%2028.7855918%2C98.9235541%2025.5688965%2C98.0842912%20C22.3522013%2C97.2450283%2019.6531351%2C96.0408685%2017.4716981%2C94.4718117%20C15.2902611%2C92.902755%2013.64494%2C90.8593322%2012.5357347%2C88.3415435%20C11.4265294%2C85.8237548%2010.8719268%2C82.7038862%2010.8719268%2C78.9819376%20C10.8719268%2C77.8142675%2011.0013341%2C76.445904%2011.2601487%2C74.8768473%20C11.5189632%2C73.3077905%2011.8147513%2C71.7387338%2012.1475129%2C70.1696771%20C12.4802744%2C68.6006203%2012.7760625%2C67.0680533%2013.0348771%2C65.5719759%20C13.2936916%2C64.0758986%2013.4230989%2C62.8170042%2013.4230989%2C61.7952928%20C13.4230989%2C60.6276227%2013.1273108%2C59.4599526%2012.5357347%2C58.2922824%20C11.9441586%2C57.1246123%2011.1122546%2C56.0481664%2010.0400229%2C55.0629447%20C8.96779112%2C54.077723%207.67371832%2C53.2384601%206.15780446%2C52.545156%20C4.6418906%2C51.8518519%202.92262245%2C51.3957307%201%2C51.1767926%20L1%2C51.1767926%20L1%2C48.7684729%20L1.51930974%2C48.7028819%20C3.23353605%2C48.4646434%204.77970095%2C48.030386%206.15780446%2C47.4001095%20C7.67371832%2C46.7068053%208.96779112%2C45.8675424%2010.0400229%2C44.8823207%20C11.1122546%2C43.8970991%2011.9441586%2C42.8206532%2012.5357347%2C41.652983%20C13.1273108%2C40.4853129%2013.4230989%2C39.3176428%2013.4230989%2C38.1499726%20C13.4230989%2C37.0552819%2013.2752049%2C35.7598978%2012.9794168%2C34.2638205%20C12.6836287%2C32.7677431%2012.3693539%2C31.2169312%2012.0365923%2C29.6113848%20C11.7038308%2C28.0058384%2011.4080427%2C26.4367816%2011.1492281%2C24.9042146%20C10.8904136%2C23.3716475%2010.7610063%2C22.0215289%2010.7610063%2C20.8538588%20C10.7610063%2C14.3586937%2012.9424433%2C9.48731983%2017.3053173%2C6.23973727%20C21.6681913%2C2.99215472%2028.1755289%2C0.930487137%2036.8273299%2C0.0547345375%20L36.8273299%2C0.0547345375%20Z%20M95.3520069%2C60.8919794%20C97.0502218%2C64.4359176%2098%2C68.3974922%2098%2C72.5779967%20C98%2C73.3500999%2097.9676022%2C74.1147352%2097.9040751%2C74.8706507%20L98%2C74.6579091%20C93.5541667%2C84.6925743%2084.6625%2C91.3154534%2071.325%2C94.5265463%20C81.5272095%2C93.70503%2088.9076868%2C91.3889416%2093.4664319%2C87.5782809%20C88.5117577%2C95.0270459%2079.9727844%2C99.9452655%2070.2698685%2C99.9452655%20C54.9549398%2C99.9452655%2042.539737%2C87.6925219%2042.539737%2C72.5779967%20C42.539737%2C68.3974922%2043.4895152%2C64.4359176%2045.1877301%2C60.8919794%20C49.6296095%2C70.1616186%2059.1910093%2C76.573618%2070.2698685%2C76.573618%20C81.2966172%2C76.573618%2090.8201479%2C70.2217957%2095.2888281%2C61.0233089%20Z%20M70.2698685%2C0%20C85.5847972%2C0%2098%2C12.2527436%2098%2C27.3672687%20C98%2C31.2488485%2097.1811925%2C34.9416879%2095.7047431%2C38.2867305%20C91.4315719%2C28.6063156%2081.6514848%2C21.8390805%2070.2698685%2C21.8390805%20C58.8882521%2C21.8390805%2049.1081651%2C28.6063156%2044.8352943%2C38.2862068%20C43.3585445%2C34.9416879%2042.539737%2C31.2488485%2042.539737%2C27.3672687%20C42.539737%2C12.2527436%2054.9549398%2C0%2070.2698685%2C0%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-upload {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Eupload.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-01%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22upload%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M54.4502291%2C14.5075116%20C66.2352089%2C15.4895932%2076.7266765%2C21.5133433%2082.1622205%2C32.9308181%20C79.323211%2C32.2616077%2075.9386527%2C31.6686205%2072.0087476%2C31.1513759%20C76.6809637%2C32.5672758%2080.4019314%2C33.9389557%2083.1716504%2C35.2664156%20C83.172327%2C35.2666141%2083.1730036%2C35.2668126%2083.1736801%2C35.2670112%20L83.1745092%2C35.2702457%20C95.0140766%2C40.4173943%20100%2C49.2407814%20100%2C59.5336626%20C100%2C73.6747733%2092.1465415%2C80.9996183%2081.1517837%2C84.1409776%20L54.031%2C84.1405852%20L56%2C61%20L75.5808824%2C61.0690834%20L50%2C35.0039062%20L24.625%2C61.0690834%20L44%2C61%20L45.969%2C84.1405852%20L21.4659557%2C84.1409776%20C7.39306331%2C79.5355678%200%2C71.4395472%200%2C57.9629829%20C0%2C46.4446652%208.32798994%2C34.6334321%2021.4659557%2C31.0574228%20C25.3752613%2C22.75765%2036.0362616%2C12.9368319%2054.4502291%2C14.5075116%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-volume-adjust {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Evolume-adjust.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22%E6%8E%A7%E4%BB%B6%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22volume-adjust%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M100%2C0%20L100%2C94.3712842%20L0%2C94.3712842%20L0%2C87.6444055%20L100%2C0%20Z%20M77.2742574%2C47.916%20L70.2009901%2C47.916%20L70.2009901%2C63.3417426%20L54.7%2C63.3417426%20L54.7%2C70.4150099%20L70.2009901%2C70.4150099%20L70.2009901%2C85.916%20L77.2742574%2C85.916%20L77.2742574%2C70.4150099%20L92.7%2C70.4150099%20L92.7%2C63.3417426%20L77.2742574%2C63.3417426%20L77.2742574%2C47.916%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpolygon%20id%3D%22-%22%20fill-rule%3D%22nonzero%22%20points%3D%2242%2041%2061%2025%201.42108547e-14%2025%20-3.91409311e-14%2041%22%3E%3C%2Fpolygon%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-volume {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%22100px%22%20viewBox%3D%220%200%20100%20100%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Evolume.cover%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-03%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22volume%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M62%2C3.5%20C83.7305126%2C8.16980087%20100%2C27.2152071%20100%2C50%20C100%2C72.7847929%2083.7305126%2C91.8301991%2062%2C96.5%20M62.0016265%2C15.5%20L62%2C32.4895935%20C70.4470701%2C35.3303475%2076.4987567%2C42.9930006%2076.4987567%2C52%20C76.4987567%2C61.0069994%2070.4470701%2C68.6696525%2062%2C71.5104065%20L62.0016265%2C88.5%20C78.7376174%2C83.9960121%2091%2C69.3600138%2091%2C52%20C91%2C34.6399862%2078.7376174%2C20.0039879%2062.0016265%2C15.5%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%2C36.1090045%20L29.8772657%2C31.9411269%20L50%2C4%20L50%2C96%20L29.8772657%2C73.9463326%20L0%2C69.7784549%20L0%2C63.804469%20C7.4279893%2C63.0605474%2013.7942452%2C62.9393039%2019.0987677%2C63.4407384%20C24.4032903%2C63.9421729%2031.3703677%2C65.4619268%2040%2C68%20C32.5648527%2C63.62093%2026.6115848%2C60.7500245%2022.1401963%2C59.3872833%20C17.6688078%2C58.0245422%2010.2887424%2C56.8954477%200%2C56%20L0%2C56%20L0%2C36.1090045%20Z%22%20id%3D%22%E5%BD%A2%E7%8A%B6%E7%BB%93%E5%90%88%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.icon-warning {
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20width%3D%22100px%22%20height%3D%2295px%22%20viewBox%3D%220%200%20100%2095%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Ctitle%3Ewarning.contain%3C%2Ftitle%3E%0A%20%20%20%20%3Cg%20id%3D%22icons-02%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22warning%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C3.05908303%20C69.4734964%2C3.05908303%2099.86%2C58.0919648%20100%2C76.5424933%20C100.1358%2C94.4395059%2094.4844613%2C94.9764163%2053.9973591%2C94.9925236%20L46.2822705%2C94.9925236%20C5.78726472%2C94.9764163%200.0042%2C94.4395059%200.14%2C76.5424933%20C0.28%2C58.0919648%2030.8065036%2C3.05908303%2050.14%2C3.05908303%20Z%20M50%2C70%20C46.6862915%2C70%2044%2C72.6862915%2044%2C76%20C44%2C79.3137085%2046.6862915%2C82%2050%2C82%20C53.3137085%2C82%2056%2C79.3137085%2056%2C76%20C56%2C72.6862915%2053.3137085%2C70%2050%2C70%20Z%20M50%2C27%20C46.2665294%2C27%2044%2C29.6510692%2044%2C34.1463825%20C44%2C37.1432581%2045.1666667%2C48.0944639%2047.5%2C67%20L47.5%2C67%20L52.5%2C67%20L52.5799974%2C66.3512377%20C54.8599991%2C47.843763%2056%2C37.1088112%2056%2C34.1463825%20C56%2C29.6510692%2053.7334706%2C27%2050%2C27%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%20%20%3Cg%20id%3D%22success%22%20transform%3D%22translate%280.000000%2C%20-100.000000%29%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M50.14%2C0.06%20C77.7542375%2C0.06%20100.14%2C22.4457625%20100.14%2C50.06%20C100.14%2C77.6742375%2077.7542375%2C100.06%2050.14%2C100.06%20C22.5257625%2C100.06%200.14%2C77.6742375%200.14%2C50.06%20C0.14%2C22.4457625%2022.5257625%2C0.06%2050.14%2C0.06%20Z%20M79.3408356%2C33.4617747%20L42.7%2C64.2276047%20L24.0041898%2C43.965797%20L16.7017282%2C51.1758296%20L41.6680188%2C78.2081208%20L85.4309457%2C40.86347%20L79.3408356%2C33.4617747%20Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.player-main {
+  margin: 20px auto;
+}
+html {
+  font-size: 16px;
+  line-height: 1;
+  font-family: menlo;
+}
+body {
+  overflow: hidden;
+}
+.app-main {
+  position: relative;
+  display: flex;
+  flex: 1;
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+.app-main .left-right {
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+.app-main .app-route-view {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+}
+.flex-1 {
+  display: flex;
+  flex: 1;
+}
+.flex-center {
+  display: block;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+.icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flex-full {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.flex-full-scroll {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+.clickable {
+  cursor: pointer;
+}
+.clickable:active {
+  opacity: 0.8;
+}
+
