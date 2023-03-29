@@ -98,11 +98,10 @@ gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
 // const resolutionUniformLocation = gl.getUniformLocation(program, 'u_resolution');
 const timeUniformLocation = gl.getUniformLocation(program, 'u_time');
 const sizeUniformLocation = gl.getUniformLocation(program, 'u_size');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 function drawgl() {
     // 设置 canvas 的分辨率
-    const start = Date.now();
-    canvas.width = window.innerWidth - 20;
-    canvas.height = window.innerHeight - 20;
     gl.viewport(0, 0, canvas.width, canvas.height);
     // 创造一个随机数并传递到着色器程序中
     gl.uniform1f(timeUniformLocation, Math.random());
