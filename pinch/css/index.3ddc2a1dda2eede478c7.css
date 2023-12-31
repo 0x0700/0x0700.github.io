@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.label-select-image {
+  position: fixed;
+  bottom: 2em;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: #1f61a9;
+  border-radius: 4px;
+  padding: 0.5em 0;
+  color: #FFF;
+  max-width: 300px;
+}
+.label-select-image:active {
+  background-color: #0b3969;
+}
+
+.preview {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.preview ._canvas {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0% 0%;
+}
+.preview ._canvas_descriptor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 2px white;
+  text-wrap: nowrap;
+}
+
